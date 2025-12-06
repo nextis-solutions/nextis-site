@@ -3,270 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXTIS - Next Intelligent Systems | Building Engineering Services</title>
+    <title>NEXTIS - Next Intelligent Systems</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* --- CSS RESET & BASE --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --phi: 1.618; }
 
         body {
-            /* Changed to Montserrat for a clean, engineering aesthetic */
             font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-            background: #0f1219; /* Deep technical dark blue/black */
-            color: white;
-            line-height: 1.6;
+            background-color: #0a0b0e; 
+            /* THE NEW DRAMATIC BACKGROUND */
+            background-image: url("assets/concrete_lit_wall.jpg"); /* Ensure you saved the new image */
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed; /* Keeps the wall static while content scrolls */
+            color: #E0E6ED;
+            line-height: var(--phi);
+            overflow-x: hidden;
         }
 
-        /* Header */
+        /* --- HEADER (Minimalist to let the background shine) --- */
         header {
-            padding: 1.5rem 3rem;
+            padding: 1rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(15, 18, 25, 0.9); /* Darker, more solid header */
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: fixed;
+            background: transparent; /* Transparent to show the lighting */
+            position: absolute; /* Sits on top, doesn't push content down */
             width: 100%;
-            z-index: 100;
+            z-index: 1000;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+        .logo img { height: 35px; width: auto; }
 
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-
+        nav { display: flex; gap: 2.5rem; }
         nav a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            color: #E0E6ED; text-decoration: none; font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.2em; font-weight: 600;
+            transition: color 0.3s; opacity: 0.8;
         }
+        nav a:hover { color: #FF6B35; opacity: 1; }
 
-        nav a:hover {
-            color: #d4a574;
-        }
 
-        /* Hero Section */
-        .hero {
-            min-height: 85vh;
+        /* --- MAIN CONTENT CONTAINER --- */
+        main {
+            /* Reduced padding to fit on one screen */
+            padding-top: 80px; 
+            min-height: auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+        }
+
+        /* --- SECTION 1: THE LOGO --- */
+        .logo-section {
+            margin-bottom: 2rem;
             text-align: center;
-            padding: 4rem 2rem;
-            position: relative;
-            background: radial-gradient(circle at center, #1a2332 0%, #0f1219 100%);
+            animation: fadeUp 1s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin-top: 60px;
-        }
-
-        .hero-logo {
-            max-width: 500px;
-            width: 80%;
+        .logo-icon {
+            max-width: 180px;
+            width: 20%;
             height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+        }
+        .hero-logo-lockup {
+            max-width: 380px;
+            width: 50%;
+            height: auto;
+            /* Dramatic shadow to make it feel mounted on the wall */
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+        }
+
+
+        /* --- SECTION 2: THE GLOWING CARDS --- */
+        .cards-section {
+            width: 100%;
+            max-width: 1300px;
+            padding: 0 2rem;
             margin-bottom: 2rem;
-        }
-
-        /* Modern Tagline Styling */
-        .hero .sub-tagline {
-            font-size: 0.9rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.3em; 
-            color: rgba(255,255,255,0.5); 
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .hero .tagline-main {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            color: #d4a574; /* Architectural Bronze/Gold */
-            font-weight: 300; /* Light weight looks more expensive */
-            letter-spacing: 0.02em;
-            margin-bottom: 3rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 3rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: white;
-            background: linear-gradient(135deg, rgba(95, 168, 211, 0.15), rgba(212, 100, 50, 0.15));
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 2px; /* Sharp corners for engineering feel */
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(135deg, rgba(95, 168, 211, 0.3), rgba(212, 100, 50, 0.3));
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: clamp(1.8rem, 4vw, 2.2rem);
-            margin-bottom: 2rem;
-            color: white;
-            font-weight: 300;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
+            /* 4 columns for the horizontal layout */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
-        @media (max-width: 700px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* The New "Pill" Card Style */
         .feature-card {
-            /* NEW LOOK: Clean, Architectural Concrete with Dark Overlay */
-            background: linear-gradient(rgba(18, 22, 28, 0.9), rgba(18, 22, 28, 0.85)),
-                        url("assets/NEXTIS-CARD.png"); /* Ensure this file exists */
+            /* Concrete texture with lighter overlay to show texture */
+            background: linear-gradient(rgba(30, 35, 40, 0.4), rgba(25, 30, 35, 0.5)), url("assets/concrete_bg.png");
             background-size: cover;
             background-position: center;
-            
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-left: 4px solid; /* Technical indicator strip on the left */
-            border-radius: 3px;
-            padding: 2.5rem;
+            /* Full glowing borders */
+            border: 5px solid; 
+            border-radius: 15px;
+            padding: 1.5rem 1.2rem;
+            text-align: center;
             transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex; flex-direction: column; align-items: center;
+            backdrop-filter: blur(2px);
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-            /* Lighten the overlay slightly on hover to reveal texture */
-            background: linear-gradient(rgba(25, 30, 40, 0.8), rgba(25, 30, 40, 0.8)),
-                        url("assets/NEXTIS-CARD.png");
-            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px) scale(1.02);
         }
 
-        /* Technical Colors for the Left Border */
-        .feature-card.air { border-left-color: #87CEEB; }
-        .feature-card.water { border-left-color: #5fa8d3; }
-        .feature-card.power { border-left-color: #FFD700; }
-        .feature-card.fire { border-left-color: #d4744a; }
+        /* Specific Card Glows & Colors */
+        .air {
+            border-color: #00A8E8;
+            box-shadow: 0 0 25px rgba(0, 168, 232, 0.4), inset 0 0 10px rgba(0, 168, 232, 0.2);
+        }
+        .water {
+            border-color: #4A90E2;
+            box-shadow: 0 0 25px rgba(74, 144, 226, 0.4), inset 0 0 10px rgba(74, 144, 226, 0.2);
+        }
+        .power {
+            border-color: #FFD700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), inset 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+        .fire {
+            border-color: #FF6B35;
+            box-shadow: 0 0 25px rgba(255, 107, 53, 0.4), inset 0 0 10px rgba(255, 107, 53, 0.2);
+        }
 
         .feature-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
+            font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;
+            letter-spacing: 0.1em; text-transform: uppercase; color: white;
         }
+        .feature-card p { font-size: 0.8rem; line-height: 1.5; color: rgba(255,255,255,0.8); }
 
-        /* Text colors match the border */
-        .feature-card.air h3 { color: #87CEEB; }
-        .feature-card.water h3 { color: #5fa8d3; }
-        .feature-card.power h3 { color: #FFD700; }
-        .feature-card.fire h3 { color: #d4744a; }
 
-        .feature-card p {
-            color: #b0b8c4; /* Technical grey, easier to read than stark white */
-            font-size: 0.95rem;
-            font-weight: 400;
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            padding: 5rem 2rem;
+        /* --- SECTION 3: MISSION TEXT --- */
+        .mission-section {
+            max-width: 900px;
+            padding: 0 2rem;
             text-align: center;
-            background: #0a0d12;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-bottom: 1.5rem;
         }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 1rem;
+        .mission-statement {
+            font-size: 1rem; font-weight: 300; line-height: 1.7;
+            color: #b0b8c4;
+            /* Subtle text shadow to make it look engraved/projected */
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
+        .mission-statement strong { color: white; font-weight: 600; }
 
-        footer a {
-            color: #d4a574;
-            text-decoration: none;
-            transition: color 0.3s ease;
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 1.5rem 2rem; text-align: center; background: transparent;
         }
+        .footer-cta { font-size: 1rem; font-weight: 300; color: white; margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+        .footer-email { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        .footer-email:hover { color: #00A8E8; }
+        .copyright { margin-top: 1rem; font-size: 0.75rem; opacity: 0.5; letter-spacing: 0.1em; }
 
-        footer a:hover {
-            color: #ffffff;
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Responsive: Stack cards on tablet/mobile */
+        @media (max-width: 1024px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            header {
-                padding: 1rem 1.5rem;
-                flex-direction: column;
-                gap: 1rem;
-                position: relative;
-                background: #0f1219;
-            }
-
-            .hero-content {
-                margin-top: 0;
-            }
-
-            nav {
-                gap: 1.5rem;
-            }
-
-            .hero {
-                min-height: 70vh;
-            }
+            header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; background: rgba(10,11,14,0.9); position: relative; }
+            main { padding-top: 4rem; }
+            .logo-section { flex-direction: column; gap: 1rem; }
+            .logo-icon { max-width: 120px; width: 40%; }
+            .hero-logo-lockup { max-width: 300px; width: 80%; }
+            .features-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+            .feature-card { padding: 2rem; }
+            .mission-statement { font-size: 1.1rem; }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <header>
-        <a href="index.html" class="logo"><img src="assets/NEXTIS-LOGO.jpg" alt="Nextis"></a>
+        <div></div>
         <nav>
             <a href="#about">Mission</a>
             <a href="#contact">Contact</a>
@@ -274,20 +201,12 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <img src="assets/NEXTIS.png" alt="Nextis - Next Intelligent Systems" class="hero-logo">
-                <p class="sub-tagline">Next Intelligent Systems</p>
-                <p class="tagline-main">Enhancing environments through intelligent systems</p>
-                <a href="#about" class="cta-button">Explore Services</a>
-            </div>
+        <section class="logo-section">
+            <img src="assets/NEXTIS-LOGO.jpg?v=2" alt="NEXTIS Logo" class="logo-icon">
+            <img src="assets/NEXTIS.jpg?v=2" alt="NEXTIS - Next Intelligent Systems" class="hero-logo-lockup">
         </section>
 
-        <section class="features" id="about">
-            <h2>Our Mission</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 4rem; color: #b0b8c4; line-height: 1.8; font-size: 1.05rem; font-weight: 300;">
-                <strong>NEXTIS</strong> believes that human well-being begins with our environments. We deliver professional engineering services focused on the four fundamental systems that form the foundation of health and safety: <strong>Air, Water, Power, and Fire</strong>.
-            </p>
+        <section class="cards-section" id="about">
             <div class="features-grid">
                 <div class="feature-card air">
                     <h3>Air</h3>
@@ -307,13 +226,18 @@
                 </div>
             </div>
         </section>
+
+        <section class="mission-section">
+            <p class="mission-statement">
+                At <strong>NEXTIS</strong>, we believe that human well-being begins with our environments. We deliver professional engineering services focused on the four fundamental systems that form the foundation of health and safety, where people spend the majority of their lives.
+            </p>
+        </section>
     </main>
 
     <footer id="contact">
-        <p style="font-size: 1.1rem; color: white; margin-bottom: 0.5rem; font-weight: 300; letter-spacing: 0.05em;">Ready to begin?</p>
-        
-        <p><a href="mailto:jason.milne@nextis.solutions">jason.milne@nextis.solutions</a></p>
-        <p style="margin-top: 3rem; font-size: 0.8rem; letter-spacing: 0.05em;">&copy; 2025 NEXTIS - Next Intelligent Systems. All rights reserved.</p>
+        <p class="footer-cta">Ready to begin?</p>
+        <a href="mailto:jason.milne@nextis.solutions" class="footer-email">jason.milne@nextis.solutions</a>
+        <p class="copyright">&copy; 2025 NEXTIS. All rights reserved.</p>
     </footer>
 </body>
 </html>
