@@ -13,34 +13,34 @@
     <style>
         /* --- CSS RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --phi: 1.618; }
+        html, body { height: 100%; overflow: hidden; }
 
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #0a0b0e; 
-            /* THE NEW DRAMATIC BACKGROUND */
-            background-image: url("assets/concrete_lit_wall.jpg"); /* Ensure you saved the new image */
+            background-image: url("assets/concrete_lit_wall.jpg"); 
             background-size: cover;
             background-position: center top;
-            background-attachment: fixed; /* Keeps the wall static while content scrolls */
+            background-attachment: fixed;
             color: #E0E6ED;
-            line-height: var(--phi);
-            overflow-x: hidden;
         }
 
-        /* --- HEADER (Minimalist to let the background shine) --- */
-        header {
-            padding: 1rem 3rem;
+        /* --- FULL PAGE CONTAINER --- */
+        .page-wrapper {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            align-items: center;
-            background: transparent; /* Transparent to show the lighting */
-            position: absolute; /* Sits on top, doesn't push content down */
-            width: 100%;
-            z-index: 1000;
+            padding: 1.5vh 2vw;
         }
 
-        .logo img { height: 35px; width: auto; }
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0.5vh 1vw;
+        }
 
         nav { display: flex; gap: 2.5rem; }
         nav a {
@@ -50,150 +50,87 @@
         }
         nav a:hover { color: #FF6B35; opacity: 1; }
 
-
-        /* --- MAIN CONTENT CONTAINER --- */
+        /* --- MAIN CONTENT --- */
         main {
-            /* Reduced padding to fit on one screen */
-            padding-top: 80px; 
-            min-height: auto;
+            flex: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            gap: 1.5vh;
         }
 
-        /* --- SECTION 1: THE LOGO --- */
+        /* --- LOGO SECTION --- */
         .logo-section {
-            margin-bottom: 2rem;
-            text-align: center;
-            animation: fadeUp 1s ease-out;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2vw;
         }
         .logo-icon {
-            max-width: 180px;
-            width: 20%;
-            height: auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            height: 15vh;
+            width: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
         }
         .hero-logo-lockup {
-            max-width: 380px;
-            width: 50%;
-            height: auto;
-            /* Dramatic shadow to make it feel mounted on the wall */
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+            height: 12.5vh;
+            width: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
         }
 
-
-        /* --- SECTION 2: THE GLOWING CARDS --- */
+        /* --- COMPOSITE IMAGE --- */
         .cards-section {
-            width: 100%;
-            max-width: 1300px;
-            padding: 0 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .features-grid {
-            display: grid;
-            /* 4 columns for the horizontal layout */
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-        }
-
-        /* The New "Pill" Card Style */
-        .feature-card {
-            /* Concrete texture with lighter overlay to show texture */
-            background: linear-gradient(rgba(30, 35, 40, 0.4), rgba(25, 30, 35, 0.5)), url("assets/concrete_bg.png");
-            background-size: cover;
-            background-position: center;
-            /* Full glowing borders */
-            border: 5px solid; 
-            border-radius: 15px;
-            padding: 1.5rem 1.2rem;
+            width: 95vw;
+            max-width: 1500px;
             text-align: center;
-            transition: all 0.3s ease;
-            height: 100%;
-            display: flex; flex-direction: column; align-items: center;
-            backdrop-filter: blur(2px);
+        }
+        .features-composite-image {
+            width: 100%;
+            height: 56vh;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); 
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px) scale(1.02);
-        }
-
-        /* Specific Card Glows & Colors */
-        .air {
-            border-color: #00A8E8;
-            box-shadow: 0 0 25px rgba(0, 168, 232, 0.4), inset 0 0 10px rgba(0, 168, 232, 0.2);
-        }
-        .water {
-            border-color: #4A90E2;
-            box-shadow: 0 0 25px rgba(74, 144, 226, 0.4), inset 0 0 10px rgba(74, 144, 226, 0.2);
-        }
-        .power {
-            border-color: #FFD700;
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), inset 0 0 10px rgba(255, 215, 0, 0.2);
-        }
-        .fire {
-            border-color: #FF6B35;
-            box-shadow: 0 0 25px rgba(255, 107, 53, 0.4), inset 0 0 10px rgba(255, 107, 53, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase; color: white;
-        }
-        .feature-card p { font-size: 0.8rem; line-height: 1.5; color: rgba(255,255,255,0.8); }
-
-
-        /* --- SECTION 3: MISSION TEXT --- */
+        /* --- MISSION TEXT --- */
         .mission-section {
             max-width: 900px;
-            padding: 0 2rem;
+            padding: 0 2vw;
             text-align: center;
-            margin-bottom: 1.5rem;
         }
         .mission-statement {
-            font-size: 1rem; font-weight: 300; line-height: 1.7;
-            color: #b0b8c4;
-            /* Subtle text shadow to make it look engraved/projected */
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-size: clamp(0.85rem, 1.2vw, 1.1rem); 
+            font-weight: 300; 
+            line-height: 1.6;
+            color: #d0d8e4;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
         .mission-statement strong { color: white; font-weight: 600; }
 
-
         /* --- FOOTER --- */
         footer {
-            padding: 1.5rem 2rem; text-align: center; background: transparent;
+            text-align: center;
+            padding: 1vh 2vw;
         }
-        .footer-cta { font-size: 1rem; font-weight: 300; color: white; margin-bottom: 0.5rem; letter-spacing: 0.1em; }
-        .footer-email { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 1rem; transition: color 0.3s; }
+        .footer-cta { font-size: 0.85rem; font-weight: 400; color: white; margin-bottom: 0.3vh; letter-spacing: 0.1em; opacity: 0.8; }
+        .footer-email { color: #FF6B35; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: color 0.3s; }
         .footer-email:hover { color: #00A8E8; }
-        .copyright { margin-top: 1rem; font-size: 0.75rem; opacity: 0.5; letter-spacing: 0.1em; }
+        .copyright { margin-top: 0.5vh; font-size: 0.65rem; opacity: 0.4; letter-spacing: 0.1em; text-transform: uppercase;}
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Responsive: Stack cards on tablet/mobile */
-        @media (max-width: 1024px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        /* Responsive */
         @media (max-width: 768px) {
-            header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; background: rgba(10,11,14,0.9); position: relative; }
-            main { padding-top: 4rem; }
-            .logo-section { flex-direction: column; gap: 1rem; }
-            .logo-icon { max-width: 120px; width: 40%; }
-            .hero-logo-lockup { max-width: 300px; width: 80%; }
-            .features-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .feature-card { padding: 2rem; }
-            .mission-statement { font-size: 1.1rem; }
+            .logo-section { flex-direction: column; gap: 1vh; }
+            .logo-icon { height: 8vh; }
+            .hero-logo-lockup { height: 6vh; }
+            .features-composite-image { height: 35vh; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
-
+<div class="page-wrapper">
     <header>
-        <div></div>
         <nav>
             <a href="#about">Mission</a>
             <a href="#contact">Contact</a>
@@ -202,29 +139,12 @@
 
     <main>
         <section class="logo-section">
-            <img src="assets/NEXTIS-LOGO.jpg?v=2" alt="NEXTIS Logo" class="logo-icon">
-            <img src="assets/NEXTIS.jpg?v=2" alt="NEXTIS - Next Intelligent Systems" class="hero-logo-lockup">
+            <img src="assets/NEXTIS-LOGO.jpg" alt="NEXTIS Icon" class="logo-icon">
+            <img src="assets/NEXTIS.jpg" alt="NEXTIS - Next Intelligent Systems" class="hero-logo-lockup">
         </section>
 
         <section class="cards-section" id="about">
-            <div class="features-grid">
-                <div class="feature-card air">
-                    <h3>Air</h3>
-                    <p>HVAC systems, ventilation design, air quality control, and climate management engineering for optimal indoor environments.</p>
-                </div>
-                <div class="feature-card water">
-                    <h3>Water</h3>
-                    <p>Plumbing systems, water supply infrastructure, drainage design, and sanitary engineering for safe water delivery.</p>
-                </div>
-                <div class="feature-card power">
-                    <h3>Power</h3>
-                    <p>Electrical distribution, lighting systems, emergency power, and energy infrastructure engineering for reliable operations.</p>
-                </div>
-                <div class="feature-card fire">
-                    <h3>Fire</h3>
-                    <p>Fire suppression, detection systems, life safety engineering, and emergency egress design for comprehensive protection.</p>
-                </div>
-            </div>
+            <img src="assets/features-composite.png" alt="Air, Water, Power, and Fire Systems" class="features-composite-image">
         </section>
 
         <section class="mission-section">
@@ -239,5 +159,6 @@
         <a href="mailto:jason.milne@nextis.solutions" class="footer-email">jason.milne@nextis.solutions</a>
         <p class="copyright">&copy; 2025 NEXTIS. All rights reserved.</p>
     </footer>
+</div>
 </body>
 </html>
