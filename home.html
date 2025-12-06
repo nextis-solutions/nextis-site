@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXTIS - Next Intelligent Systems | Building Engineering Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            background: #1a2332;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        nav a:hover {
+            color: #d4a574;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+            background: #1a2332;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin-top: 60px; /* Offset for fixed header */
+        }
+
+        .hero-logo {
+            max-width: 500px;
+            width: 80%;
+            height: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 3vw, 1.6rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, rgba(95, 168, 211, 0.3), rgba(212, 100, 50, 0.3));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, rgba(95, 168, 211, 0.5), rgba(212, 100, 50, 0.5));
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 700px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            /* UPDATED BACKGROUND: Stone texture with subtle dark overlay for readability */
+            background: linear-gradient(rgba(20, 25, 35, 0.4), rgba(20, 25, 35, 0.7)),
+                        url("assets/NEXTIS-CARD.png") no-repeat center center;
+            background-size: cover; /* Ensures the texture covers the entire card */
+
+            border: 1px solid rgba(100, 80, 60, 0.4);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.05),
+                0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Removed the previous pseudo-element overlay as it's incorporated into the background gradient now */
+        /* .feature-card::before { ... } */
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.08),
+                0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card.air {
+            border-top: 3px solid #ffffff;
+        }
+
+        .feature-card.water {
+            border-top: 3px solid #5fa8d3;
+        }
+
+        .feature-card.power {
+            border-top: 3px solid #FFD700;
+        }
+
+        .feature-card.fire {
+            border-top: 3px solid #d4744a;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #c9b896;
+            font-family: 'Cinzel', 'Times New Roman', serif;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Added subtle text shadow for pop against stone */
+        }
+
+        .feature-card.air h3 { color: #ffffff; }
+        .feature-card.water h3 { color: #7ec8e3; }
+        .feature-card.power h3 { color: #e6c76a; }
+        .feature-card.fire h3 { color: #e69a6a; }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.85); /* Slightly brighter text for better contrast */
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.3); /* Added subtle text shadow */
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            background: #151c28;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: #d4a574;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #5fa8d3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+                position: relative; /* Unstick header on mobile for better space */
+                background: #1a2332;
+            }
+
+            .hero-content {
+                margin-top: 0;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"><img src="assets/NEXTIS.png" alt="Nextis"></a>
+        <nav>
+            <a href="#about">Mission</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <img src="assets/NEXTIS.png" alt="Nextis" class="hero-logo">
+                <p class="tagline"><strong>Next Intelligent Systems</strong></p>
+                <p class="tagline" style="font-size: clamp(0.95rem, 2.5vw, 1.2rem); margin-top: -1rem;">Engineering the foundation of human safety through intelligent systems</p>
+                <a href="#about" class="cta-button">Our Mission</a>
+            </div>
+        </section>
+
+        <section class="features" id="about" style="padding-top: 4rem;">
+            <h2>Our Mission</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: rgba(255,255,255,0.8); line-height: 1.8; font-size: 1.1rem;">
+                At NEXTIS, we believe that human well-being begins with our environments. We deliver professional engineering services focused on the four fundamental systems that form the foundation of health and safety, where people spend the majority of their lives.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card air">
+                    <h3>Air</h3>
+                    <p>HVAC systems, ventilation design, air quality control, and climate management engineering for optimal indoor environments.</p>
+                </div>
+                <div class="feature-card water">
+                    <h3>Water</h3>
+                    <p>Plumbing systems, water supply infrastructure, drainage design, and sanitary engineering for safe water delivery.</p>
+                </div>
+                <div class="feature-card power">
+                    <h3>Power</h3>
+                    <p>Electrical distribution, lighting systems, emergency power, and energy infrastructure engineering for reliable operations.</p>
+                </div>
+                <div class="feature-card fire">
+                    <h3>Fire</h3>
+                    <p>Fire suppression, detection systems, life safety engineering, and emergency egress design for comprehensive protection.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Ready to engineer a safer future?</p>
+        <p><a href="mailto:jason.milne@nextis.solutions">jason.milne@nextis.solutions</a></p>
+        <p style="margin-top: 2rem; font-size: 0.9rem;">&copy; 2025 NEXTIS - Next Intelligent Systems. All rights reserved.</p>
+    </footer>
+</body>
+</html>
