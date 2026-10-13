@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXTIS | MEPF Engineering for Medical, Dental and Commercial Buildings in North Carolina</title>
+<meta name="description" content="NEXTIS PLLC provides licensed MEPF engineering for medical, dental and commercial buildings in North Carolina. Permit-ready drawings that prevent surprises during construction.">
+<meta name="theme-color" content="#1E2126">
+<link rel="canonical" href="https://nextis.solutions/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEXTIS">
+<meta property="og:url" content="https://nextis.solutions/">
+<meta property="og:title" content="NEXTIS | MEPF Engineering for Medical, Dental and Commercial Buildings">
+<meta property="og:description" content="Permit-ready drawings that prevent surprises during construction.">
+<meta property="og:image" content="https://nextis.solutions/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap">
+<style>
+:root {
+  --charcoal: #2B2F36;
+  --sapphire: #1A5FB4;
+  --opal: #F2542D;
+  --slate: #6B7280;
+  --muted-dark: #C9CED6;
+  --soft-dark: #DDE1E6;
+  --focus: #3D7FD1;
+  --head: Montserrat, Arial, sans-serif;
+  --body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background: #1E2126;
+  color: #FFFFFF;
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #FFFFFF; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.screen {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(rgba(18, 20, 24, 0.45), rgba(18, 20, 24, 0.45)),
+    url("assets/stone-bg.jpg") center / cover no-repeat,
+    #1E2126;
+}
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+
+/* Header */
+.site-header { flex: none; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+.header-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-top: clamp(8px, 1.6vh, 18px); padding-bottom: clamp(8px, 1.6vh, 18px);
+}
+.logo { display: block; height: clamp(24px, 2.2vw, 32px); width: auto; }
+.mail-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-width: 44px; min-height: 44px; padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 4px;
+  color: #FFFFFF; text-decoration: none; font-size: 15px; font-weight: 700;
+}
+.mail-link:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* Main layout */
+.main { flex: 1 1 auto; display: flex; align-items: center; min-height: 0; }
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 64px);
+  padding-top: clamp(16px, 3.4vh, 40px);
+  padding-bottom: clamp(16px, 3.4vh, 40px);
+}
+
+/* Pitch */
+.pitch { display: flex; flex-direction: column; gap: clamp(12px, 2.4vh, 26px); min-width: 0; }
+h1 {
+  margin: 0;
+  font-family: var(--head);
+  font-size: clamp(30px, min(4.6vw, 7vh), 64px);
+  line-height: 1.06; font-weight: 700; letter-spacing: -0.015em;
+  color: #FFFFFF; text-wrap: balance;
+}
+.sub {
+  margin: 0; max-width: 32em;
+  font-size: clamp(15px, min(1.5vw, 2.4vh), 20px); line-height: 1.5;
+  color: var(--muted-dark);
+}
+.systems {
+  list-style: none; margin: 0; padding: 0; max-width: 680px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(140px, 100%), 1fr));
+  gap: 14px 20px;
+}
+.systems li { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.systems svg { flex: none; }
+.sys-text { display: flex; flex-direction: column; line-height: 1.25; }
+.sys-name { font-family: var(--head); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+.sys-discipline { font-size: 15px; color: #E4E7EB; }
+.proof {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 8px;
+  font-size: clamp(14px, 2vh, 16px); line-height: 1.4; color: var(--soft-dark);
+}
+.proof li { display: flex; align-items: center; gap: 10px; }
+.proof svg { flex: none; }
+
+/* Buttons and the scheduling note */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 0 24px;
+  background: var(--opal); color: #FFFFFF; border: 0; border-radius: 4px;
+  font-family: var(--head); font-size: 19px; font-weight: 700;
+  text-decoration: none; cursor: pointer;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn[disabled] { opacity: 0.75; cursor: progress; }
+.now { margin: 0; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; }
+.now::before { content: ""; width: 9px; height: 9px; flex: none; background: var(--opal); }
+.mobile-cta { display: none; flex-direction: column; gap: 12px; }
+.mobile-cta .btn { width: 100%; }
+
+/* Proposal card */
+.form-panel { min-width: 0; }
+.form-panel:focus { outline: none; }
+.card {
+  display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px);
+  padding: clamp(20px, 3.4vh, 32px);
+  background: #FFFFFF; color: var(--charcoal); border-radius: 6px;
+  box-shadow: 0 28px 56px -28px rgba(0, 0, 0, 0.75);
+}
+.card .now { color: var(--charcoal); }
+.back {
+  display: none; align-items: center; gap: 6px; align-self: flex-start;
+  min-height: 44px; padding-right: 10px;
+  color: var(--sapphire); font-size: 15px; font-weight: 700; text-decoration: none;
+}
+.card form { display: flex; flex-direction: column; gap: clamp(8px, 1.4vh, 14px); }
+.form-head { display: flex; flex-direction: column; gap: 6px; }
+.card h2 {
+  margin: 0; font-family: var(--head);
+  font-size: clamp(22px, 3vh, 28px); line-height: 1.15; font-weight: 700; color: var(--charcoal);
+}
+.muted { margin: 0; font-size: 15px; line-height: 1.5; color: var(--slate); }
+.row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr)); gap: clamp(8px, 1.4vh, 14px); }
+.field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.card label { font-size: 14px; font-weight: 700; color: var(--charcoal); }
+.optional { font-weight: 400; color: var(--slate); }
+.card input, .card textarea {
+  width: 100%; min-height: 46px; padding: 9px 12px;
+  font: inherit; font-size: 16px; color: var(--charcoal);
+  background: #FFFFFF; border: 1px solid #7B8494; border-radius: 4px;
+}
+.card textarea { min-height: clamp(48px, 7vh, 80px); line-height: 1.45; resize: none; }
+.card ::placeholder { color: var(--slate); }
+.fine { margin: 0; font-size: 14px; line-height: 1.5; color: var(--slate); }
+.card a { color: var(--sapphire); font-weight: 700; }
+.message { margin: 0; font-size: 14px; line-height: 1.5; }
+.message.is-error { color: #B42318; }
+.message.is-info { color: var(--charcoal); }
+.sent { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; }
+.sent:focus { outline: none; }
+.sent p { margin: 0; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Phones: the pitch fills the screen; "Request a proposal" swaps it for the form */
+@media (max-width: 719px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .desktop-only { display: none !important; }
+  .mobile-cta { display: flex; }
+  .back { display: inline-flex; }
+  .form-panel { display: none; }
+  .form-panel:target { display: block; }
+  .split:has(.form-panel:target) .pitch { display: none; }
+}
+@media (max-height: 620px) {
+  .proof, .fine { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="screen">
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <img class="logo" src="assets/nextis-logo-reverse.png" alt="NEXTIS" width="176" height="32">
+    <a class="mail-link" href="mailto:proposals@nextis.solutions" aria-label="Email proposals@nextis.solutions">
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+      <span class="desktop-only">proposals@nextis.solutions</span>
+    </a>
+  </div>
+</header>
+
+<main id="top" class="main">
+  <div class="wrap split">
+
+    <div class="pitch">
+      <h1>Quality MEPF designs that clear plan review.</h1>
+      <p class="sub">Permit-ready drawings that prevent surprises during construction. Medical, dental and commercial buildings in North Carolina.</p>
+
+      <ul class="systems" aria-label="Disciplines">
+        <li>
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8CA6F7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px rgba(140, 166, 247, 0.55));"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="1.8"></circle><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2"></path><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2" transform="rotate(60 12 12)"></path><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2" transform="rotate(120 12 12)"></path><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2" transform="rotate(180 12 12)"></path><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2" transform="rotate(240 12 12)"></path><path d="M12 10.2C13.6 7.6 16.4 6.6 18.2 7.8C16.6 8.4 14.6 9.6 13.6 11.2" transform="rotate(300 12 12)"></path></svg>
+          <span class="sys-text"><span class="sys-name" style="color: #8CA6F7;">AIR</span><span class="sys-discipline">Mechanical</span></span>
+        </li>
+        <li>
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#45C8DC" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px rgba(69, 200, 220, 0.55));"><path d="M12 2.8C12 2.8 5.6 9.8 5.6 14.4A6.4 6.4 0 0 0 18.4 14.4C18.4 9.8 12 2.8 12 2.8Z"></path><path d="M9.4 13.4C9.1 15.7 10.4 17.6 12.6 18.1"></path></svg>
+          <span class="sys-text"><span class="sys-name" style="color: #45C8DC;">WATER</span><span class="sys-discipline">Plumbing</span></span>
+        </li>
+        <li>
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8C445" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px rgba(232, 196, 69, 0.5));"><path d="M13.2 2.5L5.2 13.2H11.6L10.8 21.5L18.8 10.6H12.4L13.2 2.5Z"></path></svg>
+          <span class="sys-text"><span class="sys-name" style="color: #E8C445;">POWER</span><span class="sys-discipline">Electrical</span></span>
+        </li>
+        <li>
+          <svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F5946A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px rgba(245, 148, 106, 0.55));"><path d="M12 2.6C13 6.2 17.2 8.2 17.2 13.6A5.2 5.2 0 0 1 6.8 13.6C6.8 10.6 8.4 8.8 9.4 7.2C9.6 9 10.4 10.2 11.4 10.8C11 8 11.2 5.2 12 2.6Z"></path><path d="M12 13.8C13.5 14.9 14.2 16.2 13.8 17.5A1.95 1.95 0 0 1 10.2 17.3C10 16 10.9 14.8 12 13.8Z"></path></svg>
+          <span class="sys-text"><span class="sys-name" style="color: #F5946A;">FIRE</span><span class="sys-discipline">Fire alarm</span></span>
+        </li>
+      </ul>
+
+      <ul class="proof">
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>All four disciplines coordinated before issue</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Plan review comments answered in 5 days</li>
+        <li><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8FB0E8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>The engineer you talk to seals the drawings</li>
+      </ul>
+
+      <div class="mobile-cta">
+        <a class="btn" href="#request">Request a proposal</a>
+        <p class="now">Now scheduling new design starts.</p>
+      </div>
+    </div>
+
+    <section id="request" class="form-panel" aria-labelledby="request-title" tabindex="-1">
+      <div class="card">
+        <a class="back" href="#top"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>Back</a>
+        <p class="now desktop-only">Now scheduling new design starts.</p>
+
+        <!-- FORM SETUP: replace YOUR_FORM_ID below with your Formspree form ID (see README.md). -->
+        <form id="proposal-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-head">
+            <h2 id="request-title">Request a proposal</h2>
+            <p class="muted">Tell us about the project. You'll get a clear scope and fee within 2 business days.</p>
+          </div>
+          <input type="hidden" name="_subject" value="New proposal request from nextis.solutions">
+          <div class="hp" aria-hidden="true">
+            <label for="pr-website">Leave this field empty</label>
+            <input id="pr-website" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="pr-name">Name</label>
+              <input id="pr-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="pr-email">Email</label>
+              <input id="pr-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pr-project">What are you building? <span class="optional">(optional)</span></label>
+            <textarea id="pr-project" name="project" rows="2" placeholder="Medical, dental or commercial? Size, location and target permit date"></textarea>
+          </div>
+          <button class="btn" type="submit">Request my proposal</button>
+          <p class="message is-error" id="form-error" role="alert" hidden>The request didn't send. Check your connection and try again, or email <a href="mailto:proposals@nextis.solutions">proposals@nextis.solutions</a>.</p>
+          <p class="message is-info" id="form-draft" role="status" hidden>Your email app should open with this request filled in. Press send to finish. If nothing opened, email <a href="mailto:proposals@nextis.solutions">proposals@nextis.solutions</a>.</p>
+          <p class="fine">No obligation. Prefer email? <a href="mailto:proposals@nextis.solutions">proposals@nextis.solutions</a></p>
+        </form>
+
+        <div class="sent" id="form-sent" tabindex="-1" hidden>
+          <h2>Request received.</h2>
+          <p>Your scope and fee will arrive within 2 business days. If your permit date is tight, email <a href="mailto:proposals@nextis.solutions">proposals@nextis.solutions</a> and say so.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var EMAIL = 'proposals@nextis.solutions';
+  var form = document.getElementById('proposal-form');
+  if (!form || !window.fetch || !window.FormData) return; // older browsers fall back to a normal form post
+
+  var sent = document.getElementById('form-sent');
+  var errorMsg = document.getElementById('form-error');
+  var draftMsg = document.getElementById('form-draft');
+  var button = form.querySelector('button[type="submit"]');
+  var buttonLabel = button.textContent;
+  var endpoint = form.getAttribute('action') || '';
+  var formspreeReady = endpoint.indexOf('YOUR_FORM_ID') === -1;
+
+  function showSent() {
+    form.hidden = true;
+    sent.hidden = false;
+    sent.focus();
+  }
+
+  // Until the Formspree form ID is filled in, open an email draft addressed to proposals@ instead.
+  function openEmailDraft(data) {
+    var name = (data.get('name') || '').toString();
+    var body = [
+      'Name: ' + name,
+      'Email: ' + (data.get('email') || ''),
+      '',
+      'Project: ' + (data.get('project') || '')
+    ].join('\n');
+    window.location.href = 'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent('Proposal request from ' + (name || 'nextis.solutions')) +
+      '&body=' + encodeURIComponent(body);
+    draftMsg.hidden = false;
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var data = new FormData(form);
+    errorMsg.hidden = true;
+    draftMsg.hidden = true;
+
+    // Bots fill the hidden field; people never see it. Show success without sending.
+    if (data.get('_gotcha')) { showSent(); return; }
+
+    if (!formspreeReady) { openEmailDraft(data); return; }
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    fetch(endpoint, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (response) {
+        if (!response.ok) { throw new Error('Form service returned ' + response.status); }
+        showSent();
+      })
+      .catch(function () {
+        button.disabled = false;
+        button.textContent = buttonLabel;
+        errorMsg.hidden = false;
+      });
+  });
+})();
+</script>
+</body>
+</html>
